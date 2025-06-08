@@ -10,6 +10,7 @@
         $stmt->bind_param("s", $usuario);
         $stmt->execute();
         $stmt->bind_result($hash);
+
         if ($stmt->fetch() && password_verify($password, $hash)) {
             $_SESSION['usuario'] = $usuario;
             header("Location: index.php");
@@ -17,12 +18,16 @@
         } else {
             $error = "Credenciales inválidas";
         }
+
         $stmt->close();
     }
 ?>
 <?php include 'includes/header.php'; ?>
+
 <h2>Login</h2>
+
 <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
+
 <form method="POST">
     Usuario: <input type="text" name="usuario"><br>
     Contraseña: <input type="password" name="password"><br>

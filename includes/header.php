@@ -11,8 +11,9 @@
     <header>
         <h1>Piano online</h1>
         <nav>
-            <a href="index.php">Inicio</a>
-            <a href="login.php">Login</a>
+            <a href="index.php">Piano</a>
+            <a href="login.php">Iniciar sesión</a>
+            <a href="register.php">Registrarse</a>
         </nav>
     </header>
 <main>
