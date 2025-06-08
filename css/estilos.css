@@ -17,3 +17,37 @@ nav a {
     margin-right: 10px;
     text-decoration: none;
 }
+.piano {
+  position: relative;
+  width: 280px;
+  height: 120px;
+  margin: 20px auto;
+  border: 2px solid #333;
+}
+
+.white-keys {
+  display: flex;
+}
+
+.white {
+  width: 40px;
+  height: 120px;
+  background: white;
+  border: 1px solid #aaa;
+  box-sizing: border-box;
+}
+
+.black-keys {
+  position: absolute;
+  top: 0;
+  height: 80px;
+  width: 100%;
+}
+
+.black {
+  position: absolute;
+  width: 20px;
+  height: 80px;
+  background: black;
+  z-index: 2;
+}
