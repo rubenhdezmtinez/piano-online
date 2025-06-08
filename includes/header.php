@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piano online</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="/js/piano.js"></script>
 </head>
 <body>
     <header>
