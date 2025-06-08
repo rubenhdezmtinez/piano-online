@@ -6,6 +6,10 @@ body {
   font-family: sans-serif;
 }
 
+.footer {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .piano {
   position: relative;
   width: 700px;
