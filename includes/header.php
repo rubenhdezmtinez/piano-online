@@ -13,7 +13,7 @@
         <nav>
             <a href="index.php">Piano</a>
             <a href="login.php">Iniciar sesión</a>
-            <a href="register.php">Registrarse</a>
+            <a href="registro.php">Registrarse</a>
         </nav>
     </header>
 <main>
