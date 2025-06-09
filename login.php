@@ -1,6 +1,3 @@
-<?php 
-    <link rel="stylesheet" href="/css/estilos.css"> 
-?>
 <?php
     require_once 'db.php';
     session_start();
@@ -26,6 +23,7 @@
     }
 ?>
 
+<link rel="stylesheet" href="/css/estilos.css"> 
 <h2>Login</h2>
 
 <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
