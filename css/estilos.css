@@ -40,48 +40,40 @@ body {
 
 /* Piano al centro */
 .piano {
-    position: relative; /* <--- necesario */
-    border: 2px solid black;
-    padding: 10px;
-    background-color: white;
-    width: fit-content; /* opcional: evita que se expanda de más */
+  position: relative;
+  width: 700px;
+  height: 200px;
+  border: 2px solid #444;
+  background: #ccc;
 }
 
-/* Contenedor de teclas blancas */
 .white-keys {
-    position: relative;
-    display: flex;
-    width: 560px; /* 14 teclas × 40px */
+  display: flex;
+  position: absolute;
+  z-index: 1;
 }
 
-/* Teclas blancas */
 .white {
-    width: 40px;
-    height: 200px;
-    background: white;
-    border: 1px solid black;
-    box-sizing: border-box;
+  width: 50px;
+  height: 200px;
+  background: white;
+  border: 1px solid #444;
+  box-sizing: border-box;
 }
 
-/* Contenedor de teclas negras */
 .black-keys {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 120px;
-    width: 560px; /* igual que .white-keys */
-    overflow: hidden;
-    pointer-events: none;
+  position: absolute;
+  height: 120px;
+  width: 100%;
+  z-index: 2;
 }
 
-/* Teclas negras */
 .black {
-    position: absolute;
-    width: 30px;
-    height: 120px;
-    background: black;
-    z-index: 1;
-    border-radius: 0 0 4px 4px;
+  position: absolute;
+  width: 30px;
+  height: 120px;
+  background: black;
+  border-radius: 0 0 4px 4px;
 }
 
 /* Footer abajo a la derecha */
