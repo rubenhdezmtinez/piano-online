@@ -1,29 +1,26 @@
 <?php
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-    error_reporting(E_ALL);
-    
     require_once 'db.php';
-    session_start();
-    
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $usuario = $_POST['usuario'];
-        $password = $_POST['password'];
 
-       $stmt = $conn->prepare("SELECT Contraseña FROM Usuarios WHERE Usuario = ?");
-        $stmt->bind_param("s", $usuario);
-        $stmt->execute();
-        $stmt->bind_result($hash);
+    $mensaje = '';
 
-        if ($stmt->fetch() && password_verify($password, $hash)) {
-            $_SESSION['usuario'] = $usuario;
-            header("Location: index.php");
-            exit();
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $usuario = trim($_POST['usuario']);
+        $contrasena = trim($_POST['contrasena']);
+
+        if (!empty($usuario) && !empty($contrasena)) {
+            $stmt = $conn->prepare("SELECT * FROM Usuarios WHERE Usuario = ?");
+            $stmt->execute([$usuario]);
+            $usuarioBD = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            if ($usuarioBD && password_verify($contrasena, $usuarioBD['Contraseña'])) {
+                $mensaje = "Inicio de sesión exitoso.";
+                // Aquí puedes redirigir con header("Location: home.php"); si lo deseas
+            } else {
+                $mensaje = "Usuario o contraseña incorrectos.";
+            }
         } else {
-            $error = "Credenciales inválidas";
+            $mensaje = "Rellena todos los campos.";
         }
-
-        $stmt->close();
     }
 ?>
 
