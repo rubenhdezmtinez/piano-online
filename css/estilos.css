@@ -1,3 +1,4 @@
+/* General */
 body {
     margin: 0;
     padding: 0;
@@ -6,18 +7,18 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
+/* Contenedor principal: header + piano alineados horizontalmente */
 .main-container {
+    flex: 1;
     display: flex;
-    flex-direction: row;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 40px;
 }
 
+/* Header alineado a la izquierda del piano */
 .header {
     text-align: right;
 }
@@ -26,56 +27,29 @@ body {
     margin-bottom: 20px;
 }
 
+.header a {
+    display: inline-block;
+    margin: 5px 0;
+    color: #0055aa;
+    text-decoration: none;
+}
+
 .header a:hover {
     text-decoration: underline;
 }
 
+/* Piano al centro */
+.piano {
+    border: 2px solid black;
+    padding: 10px;
+    background-color: white;
+}
+
+/* Footer abajo a la derecha */
 .footer {
     position: fixed;
     right: 10px;
     bottom: 5px;
     font-size: 0.9em;
     color: #555;
-}
-
-.footer {
-  font-family: 'Courier New', Courier, monospace;
-  margin-bottom: 25px;
-}
-
-.piano {
-  position: relative;
-  width: 700px;
-  height: 200px;
-  border: 2px solid #444;
-  background: #ccc;
-}
-
-.white-keys {
-  display: flex;
-  position: absolute;
-  z-index: 1;
-}
-
-.white {
-  width: 50px;
-  height: 200px;
-  background: white;
-  border: 1px solid #444;
-  box-sizing: border-box;
-}
-
-.black-keys {
-  position: absolute;
-  height: 120px;
-  width: 100%;
-  z-index: 2;
-}
-
-.black {
-  position: absolute;
-  width: 30px;
-  height: 120px;
-  background: black;
-  border-radius: 0 0 4px 4px;
 }
