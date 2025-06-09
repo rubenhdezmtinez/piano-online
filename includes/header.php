@@ -17,20 +17,9 @@
         </nav>
     </header>
     <div class="main-container">
-        <div class="header">
-            <h2>Piano online</h2>
-            <a href="index.php">Piano</a><br>
-            <a href="login.php">Iniciar sesión</a><br>
-            <a href="registro.php">Registrarse</a>
-        </div>
-
-        <div class="piano">
-            <!-- Aquí va tu HTML del piano con teclas -->
-            <?php include_once "templates/piano.php"; ?>
-        </div>
+        <?php include 'includes/header.php'; ?>
+        <?php include 'includes/piano.php' ?>
     </div>
 
-    <div class="footer">
-        © 2025 Piano Online
-    </div>
+    <?php include 'includes/footer.php'; ?>
 <main>
