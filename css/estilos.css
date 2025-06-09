@@ -1,4 +1,3 @@
-/* General */
 body {
     margin: 0;
     padding: 0;
@@ -9,36 +8,16 @@ body {
     flex-direction: column;
 }
 
-/* Contenedor principal: header + piano alineados horizontalmente */
 .main-container {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-/* Header alineado a la izquierda del piano */
-.header {
-    text-align: right;
-}
-
-.header h2 {
-    margin-bottom: 20px;
-}
-
-.header a {
-    display: inline-block;
-    margin: 5px 0;
-    color: #0055aa;
-    text-decoration: none;
-}
-
-.header a:hover {
-    text-decoration: underline;
-}
-
-/* Piano al centro */
 .piano {
   position: relative;
   width: 700px;
@@ -76,7 +55,6 @@ body {
   border-radius: 0 0 4px 4px;
 }
 
-/* Footer abajo a la derecha */
 .footer {
     position: fixed;
     right: 10px;
@@ -85,13 +63,11 @@ body {
     color: #555;
 }
 
-/* Contenedor general con sidebar + contenido */
 .layout {
     display: flex;
     height: 100vh;
 }
 
-/* Barra lateral */
 .sidebar {
     width: 200px;
     background-color: #222;
@@ -107,6 +83,7 @@ body {
 .sidebar ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .sidebar li {
@@ -121,15 +98,4 @@ body {
 
 .sidebar a:hover {
     color: white;
-}
-
-/* Ajusta el contenedor principal para no quedar debajo de la sidebar */
-.main-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding: 20px;
-    box-sizing: border-box;
 }

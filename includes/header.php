@@ -1,6 +1,10 @@
-<div class="header">
-    <h2>Piano online</h2>
-    <a href="index.php">Piano</a><br>
-    <a href="login.php">Iniciar sesión</a><br>
-    <a href="registro.php">Registrarse</a>
+<div class="sidebar">
+    <h2>Menú</h2>
+    <ul>
+        <li><a href="index.php">Inicio</a></li>
+        <li><a href="login.php">Iniciar sesión</a></li>
+        <li><a href="registro.php">Registrarse</a></li>
+        <li><a href="#">Teoría musical</a></li>
+        <li><a href="#">Ajustes</a></li>
+    </ul>
 </div>

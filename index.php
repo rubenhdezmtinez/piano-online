@@ -7,8 +7,6 @@
     <script src="/js/piano.js"></script>
 </head>
 <body>
-    <?php include_once 'includes/sidebar.php'; ?>
-    
     <div class="main-container">
         <?php include_once 'includes/header.php'; ?>
         <?php include_once 'templates/piano.php'; ?>
