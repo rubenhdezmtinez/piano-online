@@ -1,30 +1,30 @@
 <?php
-require_once 'db.php'; // Asegúrate de que contiene $conn con tu conexión PDO o mysqli
+    require_once 'db.php';
 
-$mensaje = '';
+    $mensaje = '';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $usuario = trim($_POST['usuario']);
-    $correo = trim($_POST['correo']);
-    $contrasena = trim($_POST['contrasena']);
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $usuario = trim($_POST['usuario']);
+        $correo = trim($_POST['correo']);
+        $contrasena = trim($_POST['contrasena']);
 
-    // Validación básica
-    if (!empty($usuario) && !empty($correo) && !empty($contrasena)) {
+        // Validación básica
+        if (!empty($usuario) && !empty($correo) && !empty($contrasena)) {
 
-        // Encriptar contraseña
-        $hash = password_hash($contrasena, PASSWORD_BCRYPT);
+            // Encriptar contraseña
+            $hash = password_hash($contrasena, PASSWORD_BCRYPT);
 
-        // Preparar e insertar en la base de datos
-        $stmt = $conn->prepare("INSERT INTO Usuario (Usuario, Correo, Contraseña) VALUES (?, ?, ?)");
-        if ($stmt->execute([$usuario, $correo, $hash])) {
-            $mensaje = "Registro exitoso.";
+            // Preparar e insertar en la base de datos
+            $stmt = $conn->prepare("INSERT INTO Usuario (Usuario, Correo, Contraseña) VALUES (?, ?, ?)");
+            if ($stmt->execute([$usuario, $correo, $hash])) {
+                $mensaje = "Registro exitoso.";
+            } else {
+                $mensaje = "Error al registrar usuario.";
+            }
         } else {
-            $mensaje = "Error al registrar usuario.";
+            $mensaje = "Todos los campos son obligatorios.";
         }
-    } else {
-        $mensaje = "Todos los campos son obligatorios.";
     }
-}
 ?>
 
 <!DOCTYPE html>
