@@ -51,6 +51,7 @@ body {
 .white-keys {
     position: relative;
     display: flex;
+    width: 560px; /* 14 teclas × 40px */
 }
 
 /* Teclas blancas */
@@ -68,8 +69,9 @@ body {
     top: 0;
     left: 0;
     height: 120px;
-    width: 100%;
-    pointer-events: none; /* Para que no bloqueen eventos a las teclas blancas debajo */
+    width: 560px; /* igual que .white-keys */
+    overflow: hidden;
+    pointer-events: none;
 }
 
 /* Teclas negras */
