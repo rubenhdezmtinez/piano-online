@@ -15,7 +15,7 @@
             $hash = password_hash($contrasena, PASSWORD_BCRYPT);
 
             // Preparar e insertar en la base de datos
-            $stmt = $conn->prepare("INSERT INTO Usuario (Usuario, Correo, Contraseña) VALUES (?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO Usuarios (Usuario, Correo, Contraseña) VALUES (?, ?, ?)");
             if ($stmt->execute([$usuario, $correo, $hash])) {
                 $mensaje = "Registro exitoso.";
             } else {
