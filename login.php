@@ -27,24 +27,30 @@
     }
 ?>
 
-<link rel="stylesheet" href="/css/estilos.css"> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Iniciar Sesión</h2>
+        <?php if ($mensaje): ?>
+            <p class="mensaje"><?= $mensaje ?></p>
+        <?php endif; ?>
+        <form method="POST" action="">
+            <label for="usuario">Usuario:</label>
+            <input type="text" name="usuario" id="usuario" required>
 
-<?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" name="contrasena" id="contrasena" required>
 
-<div class="form-container">
-    <h2>Iniciar Sesión</h2>
-    <?php if ($mensaje): ?>
-        <p class="mensaje"><?= $mensaje ?></p>
-    <?php endif; ?>
-    <form method="POST" action="">
-        <label for="usuario">Usuario:</label>
-        <input type="text" name="usuario" id="usuario" required>
-
-        <label for="contrasena">Contraseña:</label>
-        <input type="password" name="contrasena" id="contrasena" required>
-
-        <button type="submit">Entrar</button>
-    </form>
-</div>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+</body>
+</html>
 
 <?php include 'includes/footer.php'; ?>
