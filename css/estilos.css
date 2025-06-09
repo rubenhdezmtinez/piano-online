@@ -45,6 +45,41 @@ body {
     background-color: white;
 }
 
+/* Contenedor de teclas blancas */
+.white-keys {
+    position: relative;
+    display: flex;
+}
+
+/* Teclas blancas */
+.white {
+    width: 40px;
+    height: 200px;
+    background: white;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+/* Contenedor de teclas negras */
+.black-keys {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 120px;
+    width: 100%;
+    pointer-events: none; /* Para que no bloqueen eventos a las teclas blancas debajo */
+}
+
+/* Teclas negras */
+.black {
+    position: absolute;
+    width: 30px;
+    height: 120px;
+    background: black;
+    z-index: 1;
+    border-radius: 0 0 4px 4px;
+}
+
 /* Footer abajo a la derecha */
 .footer {
     position: fixed;
