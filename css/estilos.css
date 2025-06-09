@@ -84,3 +84,52 @@ body {
     font-size: 0.9em;
     color: #555;
 }
+
+/* Contenedor general con sidebar + contenido */
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 200px;
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 15px 0;
+}
+
+.sidebar a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.sidebar a:hover {
+    color: white;
+}
+
+/* Ajusta el contenedor principal para no quedar debajo de la sidebar */
+.main-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 20px;
+    box-sizing: border-box;
+}
