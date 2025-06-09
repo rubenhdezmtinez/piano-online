@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Piano online</title>
     <link rel="stylesheet" href="/css/estilos.css">
+    <script src="/js/piano.js"></script>
 </head>
 <body>
     <div class="main-container">
