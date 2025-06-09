@@ -9,6 +9,10 @@ body {
     flex-direction: column;
 }
 
+a {
+  background-color: #0055aa;
+  font-weight: 500;
+}
 /* Contenedor principal: header + piano alineados horizontalmente */
 .main-container {
     flex: 1;
