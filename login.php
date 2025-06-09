@@ -1,3 +1,6 @@
+<?php 
+    <link rel="stylesheet" href="/css/estilos.css"> 
+?>
 <?php
     require_once 'db.php';
     session_start();
@@ -22,7 +25,6 @@
         $stmt->close();
     }
 ?>
-<?php include 'includes/header.php'; ?>
 
 <h2>Login</h2>
 

@@ -99,3 +99,49 @@ body {
 .sidebar a:hover {
     color: white;
 }
+
+.registro-container {
+    width: 300px;
+    margin: auto;
+    margin-top: 100px;
+    padding: 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.registro-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.registro-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registro-container label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.registro-container input {
+    margin-bottom: 15px;
+    padding: 8px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+}
+
+.registro-container button {
+    padding: 10px;
+    background-color: #0055aa;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.registro-container button:hover {
+    background-color: #003f7a;
+}

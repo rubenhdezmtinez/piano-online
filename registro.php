@@ -35,21 +35,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="/css/estilos.css">
 </head>
 <body>
-    <h2>Registro de Usuario</h2>
-    <?php if (!empty($mensaje)): ?>
-        <p><?= htmlspecialchars($mensaje) ?></p>
-    <?php endif; ?>
-    <form method="post" action="">
-        <label for="usuario">Usuario:</label>
-        <input type="text" name="usuario" id="usuario" required><br>
+    <div class="registro-container">
+        <h2>Registro de usuario</h2>
+        <form action="registro.php" method="POST">
+            <label for="usuario">Nombre de usuario:</label>
+            <input type="text" name="usuario" id="usuario" required>
 
-        <label for="correo">Correo electrónico:</label>
-        <input type="email" name="correo" id="correo" required><br>
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" name="correo" id="correo" required>
 
-        <label for="contrasena">Contraseña:</label>
-        <input type="password" name="contrasena" id="contrasena" required><br>
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" name="contrasena" id="contrasena" required>
 
-        <input type="submit" value="Registrarse">
-    </form>
+            <button type="submit">Registrarse</button>
+        </form>
+    </div>
 </body>
 </html>
