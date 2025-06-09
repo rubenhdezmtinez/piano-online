@@ -33,10 +33,17 @@
 
 <div class="form-container">
     <h2>Iniciar Sesión</h2>
-    <form action="login.php" method="post">
-        <input type="text" name="usuario" placeholder="Usuario" required>
-        <input type="password" name="clave" placeholder="Contraseña" required>
-        <input type="submit" value="Entrar">
+    <?php if ($mensaje): ?>
+        <p class="mensaje"><?= $mensaje ?></p>
+    <?php endif; ?>
+    <form method="POST" action="">
+        <label for="usuario">Usuario:</label>
+        <input type="text" name="usuario" id="usuario" required>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" name="contrasena" id="contrasena" required>
+
+        <button type="submit">Entrar</button>
     </form>
 </div>
 
