@@ -145,3 +145,51 @@ body {
 .registro-container button:hover {
     background-color: #003f7a;
 }
+
+.form-container {
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 80px auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="submit"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0 16px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+p.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 10px;
+}

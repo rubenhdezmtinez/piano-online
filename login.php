@@ -28,14 +28,16 @@
 ?>
 
 <link rel="stylesheet" href="/css/estilos.css"> 
-<h2>Login</h2>
 
 <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
 
-<form method="POST">
-    Usuario: <input type="text" name="usuario"><br>
-    Contraseña: <input type="password" name="password"><br>
-    <input type="submit" value="Entrar">
-</form>
+<div class="form-container">
+    <h2>Iniciar Sesión</h2>
+    <form action="login.php" method="post">
+        <input type="text" name="usuario" placeholder="Usuario" required>
+        <input type="password" name="clave" placeholder="Contraseña" required>
+        <input type="submit" value="Entrar">
+    </form>
+</div>
 
 <?php include 'includes/footer.php'; ?>
