@@ -10,7 +10,7 @@
         $usuario = $_POST['usuario'];
         $password = $_POST['password'];
 
-        $stmt = $conn->prepare("SELECT password FROM usuarios WHERE usuario = ?");
+        $stmt = $conn->prepare("SELECT password FROM Usuarios WHERE Usuario = ?");
         $stmt->bind_param("s", $usuario);
         $stmt->execute();
         $stmt->bind_result($hash);
