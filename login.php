@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<?php include 'sidebar.php'; ?>
+<?php include 'header.php'; ?>
 
 <!DOCTYPE html>
 <html lang="es">
