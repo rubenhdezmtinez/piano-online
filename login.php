@@ -52,9 +52,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="registro-container">
         <h2>Inicio de sesión</h2>
-        <form action="login.php" method="POST">
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" name="correo" id="correo" required>
+        <form action="registro.php" method="POST">
+            <label for="usuario">Nombre de usuario:</label>
+            <input type="text" name="usuario" id="usuario" required>
 
             <label for="contrasena">Contraseña:</label>
             <input type="password" name="contrasena" id="contrasena" required>
