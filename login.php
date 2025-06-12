@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
 require_once 'db.php';
 $mensaje = '';
 
@@ -13,7 +16,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($usuarioBD && password_verify($contrasena, $usuarioBD['Contraseña'])) {
             $mensaje = "Inicio de sesión exitoso.";
-            // Aquí puedes usar: header("Location: home.php");
         } else {
             $mensaje = "Usuario o contraseña incorrectos.";
         }
