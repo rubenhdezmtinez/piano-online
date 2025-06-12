@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($usuario) && !empty($contrasena)) {
         $stmt = $conn->prepare("SELECT * FROM Usuarios WHERE Usuario = ?");
         $stmt->execute([$usuario]);
-        $usuarioBD = $stmt->fetch(PDO::FETCH_ASSOC);
+        $usuarioBD = $stmt->fetch();
 
         if ($usuarioBD && password_verify($contrasena, $usuarioBD['Contraseña'])) {
             $mensaje = "Inicio de sesión exitoso.";
