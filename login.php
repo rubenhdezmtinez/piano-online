@@ -1,50 +1,38 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+session_start();
 
 require_once 'db.php';
 
-echo "Paso 1<br>";
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    echo "Paso 2: Formulario recibido<br>";
-
     $usuario = trim($_POST['usuario']);
     $contrasena = trim($_POST['contrasena']);
 
-    echo "Paso 3: Usuario = $usuario<br>";
-
     if (!empty($usuario) && !empty($contrasena)) {
-        echo "Paso 4: Consultando BD<br>";
-
         $stmt = $conn->prepare("SELECT * FROM Usuarios WHERE Usuario = ?");
         $stmt->bind_param("s", $usuario);
         $stmt->execute();
         $result = $stmt->get_result();
         $usuarioBD = $result->fetch_assoc();
 
-
-        echo "Paso 5: Resultado de fetch: " . var_export($usuarioBD, true) . "<br>";
-
         if ($usuarioBD && isset($usuarioBD['Contraseña'])) {
-            echo "Paso 6: Verificando contraseña<br>";
-
             if (password_verify($contrasena, $usuarioBD['Contraseña'])) {
-                echo "✅ Login correcto<br>";
+                $_SESSION['usuario'] = $usuario;
+                header("Location: index.php");
+                exit();
             } else {
-                echo "❌ Contraseña incorrecta<br>";
+                $error = "❌ Contraseña incorrecta.";
             }
         } else {
-            echo "⚠️ Usuario no encontrado o sin campo 'Contraseña'<br>";
+            $error = "⚠️ Usuario no encontrado.";
         }
     } else {
-        echo "⚠️ Usuario o contraseña vacíos<br>";
+        $error = "⚠️ Usuario o contraseña vacíos.";
     }
-} else {
-    echo "Formulario no enviado<br>";
 }
 ?>
+
+<?php include 'sidebar.php'; ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -55,6 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="registro-container">
         <h2>Inicio de sesión</h2>
+
+        <?php if (isset($error)): ?>
+            <p style="color: red;"><?= htmlspecialchars($error) ?></p>
+        <?php endif; ?>
+
         <form action="login.php" method="POST">
             <label for="usuario">Nombre de usuario:</label>
             <input type="text" name="usuario" id="usuario" required>
