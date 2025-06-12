@@ -1,4 +1,3 @@
-
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -43,3 +42,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "Formulario no enviado<br>";
 }
 ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio de sesión</title>
+    <link rel="stylesheet" href="/css/estilos.css">
+</head>
+<body>
+    <div class="registro-container">
+        <h2>Inicio de sesión</h2>
+        <form action="login.php" method="POST">
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" name="correo" id="correo" required>
+
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" name="contrasena" id="contrasena" required>
+
+            <button type="submit">Iniciar sesión</button>
+        </form>
+    </div>
+</body>
+</html>
