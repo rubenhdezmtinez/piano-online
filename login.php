@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="/css/estilos.css">
 </head>
 <body>
-    <div class="registro-container"> <!-- Reutilizamos misma clase para mismo estilo -->
+    <div class="registro-container">
         <h2>Iniciar sesión</h2>
 
         <?php if ($mensaje): ?>

@@ -12,13 +12,10 @@
         $correo = trim($_POST['correo']);
         $contrasena = trim($_POST['contrasena']);
 
-        // Validación básica
         if (!empty($usuario) && !empty($correo) && !empty($contrasena)) {
 
-            // Encriptar contraseña
             $hash = password_hash($contrasena, PASSWORD_BCRYPT);
 
-            // Preparar e insertar en la base de datos
             $stmt = $conn->prepare("INSERT INTO Usuarios (Usuario, Correo, Contraseña) VALUES (?, ?, ?)");
             if ($stmt->execute([$usuario, $correo, $hash])) {
                 $mensaje = "Registro exitoso.";
