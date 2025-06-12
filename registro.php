@@ -28,8 +28,6 @@
     }
 ?>
 
-<?php include 'includes/header.php'; ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -39,28 +37,24 @@
 </head>
 <body>
     <div class="registro-container">
-        <?php include 'includes/header.php'; ?>
+        <h2>Registro de usuario</h2>
+        
+        <?php if (isset($error)): ?>
+            <p style="color: red;"><?= htmlspecialchars($error) ?></p>
+        <?php endif; ?>
 
-        <div class="registro-container">
+        <form action="registro.php" method="POST">
+            <label for="usuario">Nombre de usuario:</label>
+            <input type="text" name="usuario" id="usuario" required>
 
-            <h2>Registro de usuario</h2>
-            <?php if (isset($error)): ?>
-                <p style="color: red;"><?= htmlspecialchars($error) ?></p>
-            <?php endif; ?>
+            <label for="correo">Correo electrónico:</label>
+            <input type="email" name="correo" id="correo" required>
 
-            <form action="registro.php" method="POST">
-                <label for="usuario">Nombre de usuario:</label>
-                <input type="text" name="usuario" id="usuario" required>
+            <label for="contrasena">Contraseña:</label>
+            <input type="password" name="contrasena" id="contrasena" required>
 
-                <label for="correo">Correo electrónico:</label>
-                <input type="email" name="correo" id="correo" required>
-
-                <label for="contrasena">Contraseña:</label>
-                <input type="password" name="contrasena" id="contrasena" required>
-
-                <button type="submit">Registrarse</button>
-            </form>
-        </div>
+            <button type="submit">Registrarse</button>
+        </form>
     </div>
 </body>
 </html>
