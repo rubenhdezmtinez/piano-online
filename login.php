@@ -6,30 +6,40 @@ error_reporting(E_ALL);
 
 require_once 'db.php';
 
-echo "Hasta aquí todo bien<br>";
-
-$mensaje = '';
+echo "Paso 1<br>";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo "Paso 2: Formulario recibido<br>";
+
     $usuario = trim($_POST['usuario']);
     $contrasena = trim($_POST['contrasena']);
 
+    echo "Paso 3: Usuario = $usuario<br>";
+
     if (!empty($usuario) && !empty($contrasena)) {
+        echo "Paso 4: Consultando BD<br>";
+
         $stmt = $conn->prepare("SELECT * FROM Usuarios WHERE Usuario = ?");
         $stmt->execute([$usuario]);
         $usuarioBD = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($usuarioBD) {
-            if (!empty($usuarioBD['Contraseña']) && password_verify($contrasena, $usuarioBD['Contraseña'])) {
-                $mensaje = "Inicio de sesión exitoso.";
+        echo "Paso 5: Resultado de fetch: " . var_export($usuarioBD, true) . "<br>";
+
+        if ($usuarioBD && isset($usuarioBD['Contraseña'])) {
+            echo "Paso 6: Verificando contraseña<br>";
+
+            if (password_verify($contrasena, $usuarioBD['Contraseña'])) {
+                echo "✅ Login correcto<br>";
             } else {
-                $mensaje = "Contraseña incorrecta.";
+                echo "❌ Contraseña incorrecta<br>";
             }
         } else {
-            $mensaje = "Usuario no encontrado.";
+            echo "⚠️ Usuario no encontrado o sin campo 'Contraseña'<br>";
         }
     } else {
-        $mensaje = "Rellena todos los campos.";
+        echo "⚠️ Usuario o contraseña vacíos<br>";
     }
+} else {
+    echo "Formulario no enviado<br>";
 }
 ?>
