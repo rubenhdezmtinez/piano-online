@@ -31,8 +31,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-<?php include 'includes/header.php'; ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -42,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <div class="main-container">
-        <?php include 'sidebar.php'; ?>
+        <?php include 'includes/header.php'; ?>
 
         <div class="registro-container">
             <h2>Inicio de sesión</h2>

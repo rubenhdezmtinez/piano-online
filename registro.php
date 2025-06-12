@@ -39,19 +39,28 @@
 </head>
 <body>
     <div class="registro-container">
-        <h2>Registro de usuario</h2>
-        <form action="registro.php" method="POST">
-            <label for="usuario">Nombre de usuario:</label>
-            <input type="text" name="usuario" id="usuario" required>
+        <?php include 'includes/header.php'; ?>
 
-            <label for="correo">Correo electrónico:</label>
-            <input type="email" name="correo" id="correo" required>
+        <div class="registro-container">
 
-            <label for="contrasena">Contraseña:</label>
-            <input type="password" name="contrasena" id="contrasena" required>
+            <h2>Registro de usuario</h2>
+            <?php if (isset($error)): ?>
+                <p style="color: red;"><?= htmlspecialchars($error) ?></p>
+            <?php endif; ?>
 
-            <button type="submit">Registrarse</button>
-        </form>
+            <form action="registro.php" method="POST">
+                <label for="usuario">Nombre de usuario:</label>
+                <input type="text" name="usuario" id="usuario" required>
+
+                <label for="correo">Correo electrónico:</label>
+                <input type="email" name="correo" id="correo" required>
+
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" name="contrasena" id="contrasena" required>
+
+                <button type="submit">Registrarse</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
