@@ -41,22 +41,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="/css/estilos.css">
 </head>
 <body>
-    <div class="registro-container">
-        <h2>Inicio de sesión</h2>
+    <div class="main-container">
+        <?php include 'sidebar.php'; ?>
 
-        <?php if (isset($error)): ?>
-            <p style="color: red;"><?= htmlspecialchars($error) ?></p>
-        <?php endif; ?>
+        <div class="registro-container">
+            <h2>Inicio de sesión</h2>
 
-        <form action="login.php" method="POST">
-            <label for="usuario">Nombre de usuario:</label>
-            <input type="text" name="usuario" id="usuario" required>
+            <?php if (isset($error)): ?>
+                <p style="color: red;"><?= htmlspecialchars($error) ?></p>
+            <?php endif; ?>
 
-            <label for="contrasena">Contraseña:</label>
-            <input type="password" name="contrasena" id="contrasena" required>
+            <form action="login.php" method="POST">
+                <label for="usuario">Nombre de usuario:</label>
+                <input type="text" name="usuario" id="usuario" required>
 
-            <button type="submit">Iniciar sesión</button>
-        </form>
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" name="contrasena" id="contrasena" required>
+
+                <button type="submit">Iniciar sesión</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
