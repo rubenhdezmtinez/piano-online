@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
     <div class="registro-container">
         <h2>Inicio de sesión</h2>
-        <form action="registro.php" method="POST">
+        <form action="login.php" method="POST">
             <label for="usuario">Nombre de usuario:</label>
             <input type="text" name="usuario" id="usuario" required>
 
