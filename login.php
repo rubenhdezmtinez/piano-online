@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $stmt = $conn->prepare("SELECT * FROM Usuarios WHERE Usuario = ?");
         $stmt->execute([$usuario]);
-        $usuarioBD = $stmt->fetch();
+        $usuarioBD = $stmt->fetch(PDO::FETCH_ASSOC);
 
         echo "Paso 5: Resultado de fetch: " . var_export($usuarioBD, true) . "<br>";
 
