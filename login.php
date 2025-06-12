@@ -19,8 +19,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Paso 4: Consultando BD<br>";
 
         $stmt = $conn->prepare("SELECT * FROM Usuarios WHERE Usuario = ?");
-        $stmt->execute([$usuario]);
-        $usuarioBD = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->bind_param("s", $usuario);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $usuarioBD = $result->fetch_assoc();
+
 
         echo "Paso 5: Resultado de fetch: " . var_export($usuarioBD, true) . "<br>";
 
